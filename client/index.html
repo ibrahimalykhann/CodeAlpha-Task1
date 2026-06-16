@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopEasy</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+
+    ShopEasy
+
+    <span id="userWelcome"></span>
+
+</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Everything You Need, Delivered Fast</h1>
+        <p>
+            Shop electronics, fashion, home essentials and much more at unbeatable prices.
+        </p>
+
+        <a href="products.html" class="btn">Explore Products</a>
+    </div>
+</section>
+
+<section class="featured">
+    <h2>Featured Products</h2>
+</section>
+
+<section class="products">
+
+    <div class="card">
+    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="">
+    <h3>Wireless Headphones</h3>
+    <p>$50</p>
+    <button>Add To Cart</button>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500" alt="">
+    <h3>Smart Watch</h3>
+    <p>$80</p>
+    <button>Add To Cart</button>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=500" alt="">
+    <h3>Gaming Mouse</h3>
+    <p>$30</p>
+    <button>Add To Cart</button>
+</div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+<script>
+
+const user = localStorage.getItem("loggedInUser");
+
+const welcomeElement =
+document.getElementById("userWelcome");
+
+if(user){
+
+    welcomeElement.innerHTML = `
+        | Welcome, ${user}
+        <button id="logoutBtn">
+            Logout
+        </button>
+    `;
+
+    document
+    .getElementById("logoutBtn")
+    .addEventListener("click", () => {
+
+        localStorage.removeItem(
+            "loggedInUser"
+        );
+
+        alert(
+            "Logged Out Successfully!"
+        );
+
+        location.reload();
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout - ShopEasy</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="logo">ShopEasy</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</nav>
+
+<section class="auth-container">
+
+    <form class="auth-form" id="checkoutForm">
+
+    <h1>Checkout</h1>
+
+    <input type="text" placeholder="Full Name" required>
+
+    <input type="email" placeholder="Email Address" required>
+
+    <input type="text" placeholder="Phone Number" required>
+
+    <input type="text" placeholder="Shipping Address" required>
+
+    <button type="submit">
+        Place Order
+    </button>
+
+</form>
+
+</section>
+
+<script>
+
+document
+.getElementById("checkoutForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert("Order Placed Successfully!");
+
+    localStorage.removeItem("cart");
+
+    window.location.href = "index.html";
+
+});
+
+</script>
+
+</body>
+</html>
